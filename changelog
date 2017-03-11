@@ -1,3 +1,10 @@
+pylucene (6.4.1-1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Update
+
+ -- Benjamin Gamari <bgamari.foss@gmail.com>  Fri, 10 Mar 2017 19:36:49 -0500
+
 pylucene (3.5.0-1.2) unstable; urgency=low
 
   * Non-maintainer upload.
