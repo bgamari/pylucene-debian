@@ -1,0 +1,33 @@
+diff -Nru pylucene-3.5.0/debian/ant.properties pylucene-3.5.0/debian/ant.properties
+--- pylucene-3.5.0/debian/ant.properties	1970-01-01 01:00:00.000000000 +0100
++++ pylucene-3.5.0/debian/ant.properties	2012-06-28 10:15:05.000000000 +0200
+@@ -0,0 +1,4 @@
++# Ensure that source and target are 1.5
++# For backwards compat on Java 7
++ant.build.javac.source=1.5
++ant.build.javac.target=1.5
+diff -Nru pylucene-3.5.0/debian/changelog pylucene-3.5.0/debian/changelog
+--- pylucene-3.5.0/debian/changelog	2012-04-24 00:12:29.000000000 +0200
++++ pylucene-3.5.0/debian/changelog	2012-06-28 10:17:44.000000000 +0200
+@@ -1,3 +1,10 @@
++pylucene (3.5.0-1.1) UNRELEASED; urgency=low
++
++  * Non-maintainer upload.
++  * Compile Java with backwards compatible bytecode.
++
++ -- Niels Thykier <niels@thykier.net>  Thu, 28 Jun 2012 10:12:47 +0200
++
+ pylucene (3.5.0-1) unstable; urgency=low
+ 
+   * New maintainer (closes: 670179)
+diff -Nru pylucene-3.5.0/debian/rules pylucene-3.5.0/debian/rules
+--- pylucene-3.5.0/debian/rules	2012-04-25 18:08:18.000000000 +0200
++++ pylucene-3.5.0/debian/rules	2012-06-28 10:14:26.000000000 +0200
+@@ -1,6 +1,6 @@
+ #!/usr/bin/make -f
+ 
+-export ANT := ant
++export ANT := ant -propertyfile $(CURDIR)/debian/ant.properties
+ export JAVA_HOME := /usr/lib/jvm/default-java
+ 
+ # number of cpp files to generate from jar. JCC will split
